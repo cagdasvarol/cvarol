@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıp Eşya Bürosu Resmi Bildirim Formu</title>
+   
+</head>
+<body>
+    <fieldset>
+    <legend><strong>1. Kişisel Bilgiler</strong></legend>
+        <label>Adınız ve Soyadınız:*</label><br>
+            <input type="text" placeholder="Örnek: Sevil Kartal" required><br><br>
+        <label>Telefon Numaranız:*</label><br>
+            <input type="tel" placeholder="05XX XXX XX XX" required><br><br>
+        <label>E-posta Adresiniz:*</label><br>
+            <input type="email" placeholder="ornek@email.com" required><br><br>
+    </fieldset>
+
+    <fieldset>
+        <legend><strong>2. Eşya Detayları</strong></legend>
+            <label>Eşya Kategorisi:*</label><br>
+                <select>
+                    <option disabled selected>Lütfen Seçiniz...</option>
+                    <option>Kişisel Aksesuar</option>
+                    <option>Elektronik Cihaz</option>
+                    <option>Giyim / Kostüm</option>
+                    <option>Sanat Eseri</option>
+                    <option>Koleksiyon Parçası</option>
+                    <option >Diğer Sıra Dışı Eşya</option>
+            </select><br><br>
+            
+            <label>Eşyanın Adı:*</label><br>
+                    <input type="text" placeholder="Örn: 1920'lerden Kalma Kadife Yelpaze" required><br><br>
+                
+            <label>Eşyanın Ana Malzemesi (Seçilebilir):</label><br>
+                <input type="text" list="malzemeler"placeholder="Örn: Kadife, Ahşap, Pirinç...">
+                <datalist id="malzemeler">
+                    <option value="Kumaş"></option>
+                    <option value="Ahşap"></option>
+                    <option value="Metal"></option>
+                    <option value="Deri"></option>
+                    <option value="Pirinç>"></option>
+                    <option value="Cam"></option>
+                    <option value="İpek"></option>
+                </datalist><br><br>
+                
+            <label>Kayıp Eşyanın Rengi:</label>
+                <input type="color"><br><br>
+                
+            <label>Eşyanın Sizin İçin Değeri:</label><br>
+            <input type="range" min="1" max="10" step="1" value="5"><br>
+            <label>(1-10 Arasında bir değer veriniz)</label><br><br>
+                   
+            <label>Eşyanın Görseli (Varsa):</label><br>
+            <input type="file"><br><br>
+                
+            <label>Kayıp Eşyayı İçin Detaylı Açıklama:*</label><br>
+            <textarea rows="4" cols="50" placeholder="Kayıp eşya ile ilgili detayları bu bölüme yazabilirsiniz..." required></textarea>
+
+    </fieldset>
+
+    <fieldset>
+        <legend><strong>3. Kayıp Zamanı</strong></legend>
+
+        <label>İzlenen Etkinlik Adı:*</label><br>
+            <input type="text" placeholder="Örn: Cebimde Kelimeler" required><br><br>
+
+        <label>Eşya Kaybolma Tarihi:*</label><br>
+            <input type="date" required><br><br>
+
+        <label for="kayip-saati">Tahmini Kayıp Saati:*</label><br>
+            <input type="time" required><br><br>
+
+        <label>Bulunduğunuz Bölüm:*</label><br>
+            <select>
+                <option disabled selected> Seçiniz...</option>
+                <option>Ön Sıralar: A-F</option>
+                <option>Orta Sıralar: G-M</option>
+                <option>Arka Sıralar: N-Z</option>
+                <option>1. Balkon</option>
+                <option>2. Balkon</option>
+                <option>Tiyatro Kafeteryası</option>
+            </select>
+
+    </fieldset><br>
+    <button type="submit">Gönder</button>
+    <button type="reset">Formu Temizle</button>
+    <br><br><br><br><br>
+</body>
+</html>

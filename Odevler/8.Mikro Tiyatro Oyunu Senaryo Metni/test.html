@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mikro Tiyatro Oyunu Senaryosu - Son Tren</title>
+</head>
+<body>
+
+  <!-- Ana Senaryo Kapsayıcısı ve ARIA Rolü -->
+  <main role="script" aria-label="Son Tren İsimli Tek Perdelik Tiyatro Oyun Senaryosu">
+    
+    <!-- Oyun Başlığı ve Bilgileri -->
+    <header>
+      <h1>Son Tren</h1>
+      <p><strong>Yazan:</strong> Ahmet Yılmaz</p>
+      <p><strong>Tür:</strong> Dram / Tek Perde</p>
+      <p><strong>Karakterler:</strong> ELİF (30, Yorgun bir yolcu), SERHAT (55, İstasyon Görevlisi)</p>
+    </header>
+
+    <hr>
+
+    <!-- Sahne Arkası Müzik / Ses Efekti (Gereksinim 4) -->
+    <section aria-label="Sahne Ambiyans Sesi">
+      <h2>Sahne Müzik Ambiyansı</h2>
+      <iframe 
+        width="15%" 
+        height="1%"
+        src="/Odevler/8.Mikro Tiyatro Oyunu Senaryo Metni/ibrahimkae-rain-weather-lightning-thunder-151314.mp3" 
+        title="Yağmurlu Tren İstasyonu Arka Plan Sesi" 
+        allow="autoplay">
+      </iframe>
+    </iframe>
+    </section>
+
+    <hr>
+
+    <!-- Sahne 1 (Gereksinim 1) -->
+    <section aria-label="Sahne 1: Gece Yarısı İstasyon Peronu">
+      <h2>Sahne 1: Gece Yarısı İstasyon Peronu</h2>
+      
+      <!-- Sahne Tanımı / Genel Yönerge -->
+      <p>
+        <small><em>(Gece saat 23:45. Şiddetli yağmur yağmaktadır. Loş bir peron lambası altında ELİF, elindeki valizle beklemektedir. SERHAT elinde fenerle yaklaşır.)</em></small>
+      </p>
+
+      <!-- Diyalog 1 (Gereksinim 1, 2, 5) -->
+      <article role="speech" aria-label="Serhat'ın konuşması">
+        <p>
+          <strong class="character" data-character="SERHAT">SERHAT:</strong> 
+          <em>(Feneri Elif'in valizine doğru tutarak, şaşkın bir ses tonuyla)</em> 
+          Bu saatte tren gelmez hanımefendi. Son sefer yarım saat önce kalktı.
+        </p>
+      </article>
+
+      <!-- Diyalog 2 -->
+      <article role="speech" aria-label="Elif'in konuşması">
+        <p>
+          <strong class="character" data-character="ELIF">ELİF:</strong> 
+          <small><em>(Bileğindeki saate bakar, sesi titrer)</em></small> 
+          İmkânsız... Bilet gişesindeki memur bana gece yarısı ekspresinin geçeceğini söyledi.
+        </p>
+      </article>
+
+      <!-- Jest, Mimik ve Yönetmen Dipnotu (Gereksinim 3) -->
+      <aside aria-label="Oyuncu Yönetmen Dipnotu">
+        <p>
+          <strong>[Yönetmen Notu - Oyuncu Momiği]:</strong> 
+          <mark>ELİF</mark> karakteri bu diyalog esnasında panik duygusunu derinleştirmek için çantasını sıkıca göğsüne bastırmalı, sesindeki titremeyi belirginleştirmelidir.
+        </p>
+      </aside>
+
+      <!-- Diyalog 3 -->
+      <article role="speech" aria-label="Serhat'ın konuşması">
+        <p>
+          <strong class="character" data-character="SERHAT">SERHAT:</strong> 
+          <em>(Derin bir iç çeker, feneri söndürür)</em> 
+          O gişe üç yıldır kapalı kızım. Kiminle konuştun sen?
+        </p>
+      </article>
+
+      <!-- Diyalog 4 -->
+      <article role="speech" aria-label="Elif'in konuşması">
+        <p>
+          <strong class="character" data-character="ELIF">ELİF:</strong> 
+          <small><em>(Yavaşça başını kaldırır ve Serhat'ın yüzüne bakar)</em></small> 
+          Sizinle... Üç yıl önce de tam bu saatte buradaydınız.
+        </p>
+      </article>
+
+    </section>
+
+    <!-- Oyun Sonu Modal/Diyalog Kutusu (Gereksinim 3) -->
+    <dialog open id="scene-warning" aria-label="Sahne Sonu Teknik Notu">
+      <h3>Sahne Sonu Notu</h3>
+      <p>Işıklar yavaşça kararır (Fade out). Yağmur sesi artarak devam eder.</p>
+    </dialog>
+
+  </main>
+
+</body>
+</html>
