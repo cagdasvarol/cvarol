@@ -66,9 +66,7 @@ p{
     max-width: 1000px;
     padding: 30px 45px; 
     align-items: center;
-    position: relative;
     margin: auto;
-    
 }
 
 .buyuk-kart{
@@ -107,6 +105,7 @@ p{
     background-color: white;
     border-radius: 12px;
     padding: 5px 25px;
+    position: relative;
     flex: 1;
     min-width: 250px;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5); 
@@ -114,7 +113,7 @@ p{
 }
 
 .kartlar:hover{
-    transform: translateY(-10px);
+    transform: scale(1.05);
     box-shadow: 0 12px 20px -3px rgba(0,0,0,0.8);
 }
 
