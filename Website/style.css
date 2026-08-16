@@ -11,8 +11,6 @@
     margin: 0;
     padding: 0;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
-    
 }
 
 body{
@@ -37,12 +35,13 @@ p{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5); 
 }
 
 .logo{
     font-size: x-large;
     font-weight:bold;
-    color:var(--renk3)
+    color:var(--renk3);
 }
 
 .nav-links{
@@ -59,7 +58,7 @@ p{
 }
 
 .nav-links a:hover{
-    color: var(--renk3);   
+    color: var(--renk3);  
 }
 
 .container{
@@ -76,9 +75,10 @@ p{
     text-align: left;
     border-radius: 12px;
     padding: 45px 35px;
+    box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.5); 
 }
 
-.buyuk-kart p{
+p{
     color: var(--renk4)
 }
 
@@ -119,19 +119,15 @@ p{
 
 .kartlar a{
     text-decoration: none;
+    font-size: small;
     color: var(--renk3);
-    font-size: medium;
     font-weight: bold;
-}
-
-.kartlar p{
-    color: var(--renk4);
 }
 
 .populer{
     position: relative;
     top: -15px;
-    right: -200px;
+    right: -175px;
     text-transform: uppercase ;
     font-size: x-small;
     font-weight: bold;
@@ -146,7 +142,7 @@ p{
 .yeni{
     position: relative;
     top: -15px;
-    right: -225px;
+    right: -200px;
     text-transform: uppercase ;
     font-size: x-small;
     font-weight: bold;
@@ -172,7 +168,8 @@ p{
 }
 
 .bulten-btn:hover{
-    transform: scale(1.1, 1.1);
+    transform: scale(1.05);
+    color: var(--renk2);
     box-shadow: 0 12px 20px -3px rgba(0,0,0,0.8);
     transition: transform 0.5s, box-shadow 0.5s;
 }
