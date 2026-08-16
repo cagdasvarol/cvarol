@@ -66,11 +66,13 @@ p{
     max-width: 2000px;
     padding: 30px 450px; 
     align-items: center;
+    position: relative;
 }
 
 .buyuk-kart{
     background-color: var(--renk2);
     color:white;
+    position: relative;
     text-align: left;
     border-radius: 12px;
     padding: 45px 35px;
