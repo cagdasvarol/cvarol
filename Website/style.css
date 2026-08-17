@@ -63,18 +63,16 @@ p{
 
 .container{
     max-width: 1000px;
-    padding: 30px 45px; 
-    align-items: center;
+    padding: 2% 1%; 
     margin: auto;
 }
 
 .buyuk-kart{
     background-color: var(--renk2);
     color:white;
-    align-items: center;
     text-align: left;
     border-radius: 12px;
-    padding: 45px 35px;
+    padding: 3.5%;
     box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.5); 
 }
 
@@ -84,13 +82,13 @@ p{
 
 .editor-secim{
     position: relative;
-    top: -20px;
+    top: -15px;
     text-transform: uppercase ;
     font-size: x-small;
     font-weight: bold;
     background-color: var(--renk3);
     border-radius: 20px;
-    padding: 3px 10px;
+    padding: 4px 10px;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5); 
 }
 
@@ -104,7 +102,7 @@ p{
 .kartlar{
     background-color: white;
     border-radius: 12px;
-    padding: 5px 25px;
+    padding: 3%;
     position: relative;
     flex: 1;
     min-width: 250px;
@@ -124,10 +122,10 @@ p{
     font-weight: bold;
 }
 
-.populer{
-    position: relative;
-    top: -15px;
-    right: -175px;
+.sticker-populer{
+    position: absolute;
+    top: -10px;
+    right: 20px;
     text-transform: uppercase ;
     font-size: x-small;
     font-weight: bold;
@@ -139,10 +137,10 @@ p{
     
 }
 
-.yeni{
-    position: relative;
-    top: -15px;
-    right: -200px;
+.sticker-yeni{
+    position: absolute;
+    top: -10px;
+    right: 20px;
     text-transform: uppercase ;
     font-size: x-small;
     font-weight: bold;
@@ -151,6 +149,7 @@ p{
     border-radius: 5px;
     padding: 4px 10px;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5); 
+    
 }
 
 .bulten-btn{
