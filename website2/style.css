@@ -138,9 +138,11 @@ p{
     width: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
-    border-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     margin-bottom: 10px;
 }
+
 
 .kartlar a{
     text-decoration: none;
