@@ -38,7 +38,7 @@ p{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5); 
+    box-shadow: 0 4px 6px -1px rgba(194,136,81,0.5); 
 }
 
 .logo{
@@ -68,7 +68,7 @@ p{
 }
 
 .nav-links a:hover{
-    color: var(--renk3);  
+    color: var(--renk3);
 }
 
 .container{
@@ -85,7 +85,7 @@ p{
     border-radius: 12px;
     padding: 60px;
     backdrop-filter: blur(12px);
-    box-shadow: 2px 2px 6px -1px rgba(0,0,0,0.5); 
+    box-shadow: 0px 4px 6px -1px rgba(194,136,81,0.5);
 }
 
 .haftanin-menusu{
@@ -121,7 +121,7 @@ p{
     cursor: default;
     min-width: 250px;
     backdrop-filter: blur(12px);
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5); 
+    box-shadow: 0 4px 6px -1px rgba(194,136,81,0.5); 
     transition: transform 0.5s, box-shadow 0.5s;
 }
 .kartlar-yazi{
@@ -131,14 +131,15 @@ p{
 .kartlar:hover{
     backdrop-filter: blur(12px);
     transform: scale(1.05);
-    box-shadow: 0 12px 20px -3px rgba(0,0,0,0.8);
+    box-shadow: 0 12px 18px -3px rgba(194,136,0,0.8);
 }
 
 .kartlar-photo{
     width: 100%;
     aspect-ratio: 4/3;
     object-fit: cover;
-    border-radius: 12px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     margin-bottom: 10px;
 }
 
