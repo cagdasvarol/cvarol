@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Döngüler Rehberi</title>
+    <title>Kapsamlı JavaScript Rehberi</title>
     <style>
-        /* Temel Ayarlar ve Renk Paleti */
         :root {
-            --primary-color: #3b82f6; /* Canlı bir mavi */
-            --bg-color: #f1f5f9;
-            --sidebar-bg: #ffffff;
-            --text-dark: #1e293b;
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --bg-color: #f8fafc;
+            --sidebar-bg: #1e293b;
+            --text-dark: #0f172a;
             --text-light: #64748b;
-            --code-bg: #1e1e1e;
+            --code-bg: #282c34;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             margin: 0;
             display: flex;
             height: 100vh;
@@ -24,48 +24,59 @@
             color: var(--text-dark);
         }
 
-        /* Yan Menü Tasarımı */
+        /* Yan Menü (Sidebar) */
         aside {
-            width: 250px;
+            width: 280px;
             background-color: var(--sidebar-bg);
-            box-shadow: 2px 0 5px rgba(0,0,0,0.05);
-            padding: 20px 0;
+            color: white;
+            overflow-y: auto;
             display: flex;
             flex-direction: column;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.1);
         }
 
         aside h2 {
-            padding: 0 20px;
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
+            padding: 20px;
+            margin: 0;
+            font-size: 1.4rem;
+            border-bottom: 1px solid #334155;
+            text-align: center;
+            background: #0f172a;
+        }
+
+        .category-title {
+            padding: 15px 20px 5px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: #94a3b8;
+            letter-spacing: 1px;
         }
 
         .menu-btn {
             background: none;
             border: none;
-            padding: 15px 20px;
+            width: 100%;
+            padding: 12px 20px;
             text-align: left;
             font-size: 1rem;
-            color: var(--text-dark);
+            color: #e2e8f0;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: 0.2s;
             border-left: 4px solid transparent;
         }
 
         .menu-btn:hover {
-            background-color: #f8fafc;
-            color: var(--primary-color);
+            background-color: #334155;
         }
 
         .menu-btn.active {
-            background-color: #eff6ff;
-            border-left-color: var(--primary-color);
-            color: var(--primary-color);
-            font-weight: bold;
+            background-color: #334155;
+            border-left-color: var(--primary);
+            color: white;
+            font-weight: 600;
         }
 
-        /* Ana İçerik Alanı */
+        /* Ana İçerik */
         main {
             flex: 1;
             padding: 40px;
@@ -73,199 +84,432 @@
         }
 
         .content-card {
-            background: #ffffff;
-            padding: 30px;
+            background: white;
+            padding: 35px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            max-width: 800px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        h1 {
-            margin-top: 0;
-            color: var(--text-dark);
-        }
-
-        p.description {
+        h1 { margin-top: 0; color: var(--text-dark); }
+        
+        .description {
             color: var(--text-light);
-            line-height: 1.6;
-            margin-bottom: 25px;
+            line-height: 1.7;
             font-size: 1.1rem;
+            margin-bottom: 30px;
         }
 
-        /* Kod ve Çıktı Kutuları */
-        .box-title {
-            font-size: 1rem;
-            font-weight: bold;
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
             margin-bottom: 10px;
-            display: inline-block;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 3px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
+        /* Kod Bloğu */
         pre {
             background-color: var(--code-bg);
-            color: #d4d4d4;
-            padding: 15px;
+            color: #abb2bf;
+            padding: 20px;
             border-radius: 8px;
             overflow-x: auto;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Consolas', 'Courier New', monospace;
             font-size: 0.95rem;
-            margin-bottom: 25px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+        
+        /* Çıktı Kutusu */
+        .output-box {
+            background-color: #f1f5f9;
+            border: 2px dashed #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+            min-height: 100px;
+            position: relative;
         }
 
-        .output-box {
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
+        /* Çıktı içi stiller (Dinamik elementler için) */
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: var(--primary);
+            color: white;
+            border-radius: 20px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .user-card {
+            background: white;
             padding: 15px;
             border-radius: 8px;
-            min-height: 80px;
-            font-family: monospace;
-            font-size: 1.1rem;
-            color: #0f172a;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--primary);
+            margin-bottom: 10px;
+        }
+        .action-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        .action-btn:hover { background: var(--primary-hover); }
+        .dynamic-box {
+            width: 100px; height: 100px;
+            background: #cbd5e1;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 12px; transition: 0.3s;
+            color: white; font-weight: bold; text-align: center;
         }
 
-        .output-item {
-            margin: 5px 0;
-            padding: 5px;
-            background: #e0f2fe;
-            border-radius: 4px;
-            display: inline-block;
-            margin-right: 10px;
-        }
     </style>
 </head>
 <body>
 
     <aside>
-        <h2>Döngü Tipleri</h2>
-        <button class="menu-btn active" onclick="loadLoop('for')">for Döngüsü</button>
-        <button class="menu-btn" onclick="loadLoop('while')">while Döngüsü</button>
-        <button class="menu-btn" onclick="loadLoop('doWhile')">do...while Döngüsü</button>
-        <button class="menu-btn" onclick="loadLoop('forIn')">for...in (Objeler)</button>
-        <button class="menu-btn" onclick="loadLoop('forOf')">for...of (Diziler)</button>
+        <h2>JS Rehberi</h2>
+        
+        <div class="category-title">1. Temeller</div>
+        <button class="menu-btn active" onclick="loadLesson('variables')">Değişkenler (let, const)</button>
+        <button class="menu-btn" onclick="loadLesson('dataTypes')">Veri Tipleri (Data Types)</button>
+        
+        <div class="category-title">2. Mantık ve Kontrol</div>
+        <button class="menu-btn" onclick="loadLesson('conditionals')">Koşullar (if/else)</button>
+        <button class="menu-btn" onclick="loadLesson('loops')">Döngüler (for, while)</button>
+
+        <div class="category-title">3. Fonksiyonlar</div>
+        <button class="menu-btn" onclick="loadLesson('functions')">Temel Fonksiyonlar</button>
+        <button class="menu-btn" onclick="loadLesson('arrowFunctions')">Ok (Arrow) Fonksiyonları</button>
+
+        <div class="category-title">4. DOM (Elementler)</div>
+        <button class="menu-btn" onclick="loadLesson('domSelect')">Element Seçme & Değiştirme</button>
+        <button class="menu-btn" onclick="loadLesson('domCreate')">Yeni Element Üretme</button>
+        <button class="menu-btn" onclick="loadLesson('events')">Olaylar (Events / Tıklama)</button>
     </aside>
 
     <main>
         <div class="content-card">
             <h1 id="title">Seçim Yapın</h1>
-            <p id="description" class="description">Öğrenmek istediğiniz döngüyü sol menüden seçin.</p>
+            <p id="description" class="description">İçeriği görmek için soldaki menüyü kullanın.</p>
             
-            <div class="box-title">Kod Yapısı:</div>
-            <pre><code id="code-block">// Kod buraya gelecek</code></pre>
+            <div class="section-title">💻 Kod Yapısı:</div>
+            <pre><code id="code-block"></code></pre>
             
-            <div class="box-title">Canlı Görsel Çıktı (Uygulama):</div>
-            <div id="output-block" class="output-box">
-                </div>
+            <div class="section-title">👀 Canlı Uygulama (Çıktı):</div>
+            <div id="output-block" class="output-box"></div>
         </div>
     </main>
 
     <script>
-        // Tüm döngülerin bilgilerini ve çalıştırılacak fonksiyonlarını içeren veri objesi
-        const loopData = {
-            "for": {
-                title: "for Döngüsü",
-                description: "En çok kullanılan döngüdür. Başlangıç değişkeni, çalışma koşulu ve artış/azalış miktarını tek bir satırda tanımlarız. Kaç kere döneceğini net bildiğimiz durumlarda mükemmeldir.",
-                code: `for (let i = 1; i <= 5; i++) {
-    console.log("Kutu " + i);
+        const lessonsData = {
+            "variables": {
+                title: "Değişkenler (Variables)",
+                description: "Değişkenler verileri hafızada tutmak için kullanılır. Modern JavaScript'te 'let' ve 'const' kullanırız. 'let' ile tanımlanan değerler sonradan değiştirilebilir, 'const' (sabit) ile tanımlananlar değiştirilemez.",
+                code: `let oyuncuIsmi = "Ahmet";
+let skor = 0;
+const MAKSIMUM_CAN = 100; // const değiştirilemez
+
+// Skoru güncelleyelim
+skor = 25; 
+
+console.log(oyuncuIsmi, skor, MAKSIMUM_CAN);`,
+                execute: (container) => {
+                    let oyuncuIsmi = "Ahmet";
+                    let skor = 25;
+                    const MAKSIMUM_CAN = 100;
+                    
+                    container.innerHTML = `
+                        <div class="user-card">
+                            <h3>🎮 Oyuncu Profili</h3>
+                            <p><b>İsim:</b> ${oyuncuIsmi} (let ile tanımlandı)</p>
+                            <p><b>Mevcut Skor:</b> ${skor} (let ile güncellendi)</p>
+                            <p><b>Maksimum Can:</b> ${MAKSIMUM_CAN} (const ile sabitlendi)</p>
+                        </div>
+                    `;
+                }
+            },
+            
+            "dataTypes": {
+                title: "Veri Tipleri (Data Types)",
+                description: "JavaScript farklı veri tiplerini tanır. Metinler (String), Sayılar (Number), Mantıksal değerler (Boolean), Diziler (Array - liste tutar) ve Nesneler (Object - detaylı veri tutar).",
+                code: `const isim = "Zeynep"; // String
+const yas = 28; // Number
+const aktifMi = true; // Boolean (true/false)
+
+// Array (Dizi)
+const yetenekler = ["HTML", "CSS", "JS"];
+
+// Object (Nesne)
+const kullanici = {
+    sehir: "İstanbul",
+    meslek: "Geliştirici"
+};`,
+                execute: (container) => {
+                    const yetenekler = ["HTML", "CSS", "JavaScript", "React"];
+                    const kullanici = { isim: "Zeynep", yas: 28, aktifMi: true };
+                    
+                    let yetenekHTML = yetenekler.map(y => `<span class="badge">${y}</span>`).join("");
+                    
+                    container.innerHTML = `
+                        <div class="user-card">
+                            <p><b>İsim:</b> ${kullanici.isim} <i>(String)</i></p>
+                            <p><b>Yaş:</b> ${kullanici.yas} <i>(Number)</i></p>
+                            <p><b>Durum:</b> ${kullanici.aktifMi ? "Aktif 🟢" : "Pasif 🔴"} <i>(Boolean)</i></p>
+                            <p><b>Yetenekler (Array):</b> <br><br> ${yetenekHTML}</p>
+                        </div>
+                    `;
+                }
+            },
+
+            "conditionals": {
+                title: "Koşullu İfadeler (if / else)",
+                description: "Programın karar verme mekanizmasıdır. Belirli bir şart doğruysa (true) bir kod bloğu, yanlışsa (false) başka bir kod bloğu çalışır.",
+                code: `const bakiye = 50;
+const urunFiyati = 75;
+
+if (bakiye >= urunFiyati) {
+    console.log("Satın alma başarılı!");
+} else {
+    const eksik = urunFiyati - bakiye;
+    console.log("Bakiye yetersiz. Eksik tutar: " + eksik + " TL");
 }`,
-                execute: function(container) {
+                execute: (container) => {
+                    const bakiye = 50;
+                    const urunFiyati = 75;
+                    let mesaj = "";
+                    let renk = "";
+
+                    if (bakiye >= urunFiyati) {
+                        mesaj = "✅ Satın alma başarılı! İşlem onaylandı.";
+                        renk = "#dcfce3";
+                    } else {
+                        const eksik = urunFiyati - bakiye;
+                        mesaj = `❌ Bakiye yetersiz! Bu ürünü almak için ${eksik} TL daha lazım. (Bakiye: ${bakiye} TL, Fiyat: ${urunFiyati} TL)`;
+                        renk = "#fee2e2";
+                    }
+
+                    container.innerHTML = `<div style="background:${renk}; padding:15px; border-radius:8px; font-weight:bold;">${mesaj}</div>`;
+                }
+            },
+
+            "loops": {
+                title: "Döngüler (Loops)",
+                description: "Aynı işlemi tekrar tekrar yapmak için kullanılır. Array (Dizi) içindeki elemanları tek tek ekrana basmak en yaygın kullanım alanlarından biridir.",
+                code: `const sepet = ["Laptop", "Mouse", "Klavye", "Kulaklık"];
+
+// i değişkeni 0'dan başlar, sepetin uzunluğuna kadar 1'er artar
+for (let i = 0; i < sepet.length; i++) {
+    console.log("Ürün " + (i+1) + ": " + sepet[i]);
+}`,
+                execute: (container) => {
+                    const sepet = ["💻 Laptop", "🖱️ Mouse", "⌨️ Klavye", "🎧 Kulaklık"];
+                    let listHTML = "<ul style='font-size:1.1rem;'>";
+                    
+                    for (let i = 0; i < sepet.length; i++) {
+                        listHTML += `<li style="margin-bottom:8px;">Sepetteki ${i+1}. Ürün: <b>${sepet[i]}</b></li>`;
+                    }
+                    listHTML += "</ul>";
+                    
+                    container.innerHTML = listHTML;
+                }
+            },
+
+            "functions": {
+                title: "Temel Fonksiyonlar (Functions)",
+                description: "Fonksiyonlar, kod parçalarını paketleyip onlara isim vermemizi sağlar. Böylece aynı kodu kopyala-yapıştır yapmak yerine, fonksiyon ismini çağırarak tekrar kullanabiliriz. Parametre alabilir ve geriye değer döndürebilirler.",
+                code: `// Fonksiyon Tanımlama
+function kdvHesapla(fiyat) {
+    const kdvliFiyat = fiyat * 1.20; // %20 KDV
+    return kdvliFiyat;
+}
+
+// Fonksiyonu Kullanma (Çağırma)
+const urun1 = kdvHesapla(100);
+const urun2 = kdvHesapla(250);`,
+                execute: (container) => {
+                    function kdvHesapla(fiyat) {
+                        return fiyat * 1.20;
+                    }
+                    
+                    const fiyat1 = 100;
+                    const fiyat2 = 450;
+
+                    container.innerHTML = `
+                        <div class="user-card">
+                            <p>Hesap Makinesi Fonksiyonu Çalıştı:</p>
+                            <p><b>${fiyat1} TL</b>'lik ürünün %20 KDV'li fiyatı: <b style="color:var(--primary)">${kdvHesapla(fiyat1)} TL</b></p>
+                            <p><b>${fiyat2} TL</b>'lik ürünün %20 KDV'li fiyatı: <b style="color:var(--primary)">${kdvHesapla(fiyat2)} TL</b></p>
+                        </div>
+                    `;
+                }
+            },
+
+            "arrowFunctions": {
+                title: "Ok (Arrow) Fonksiyonları",
+                description: "Modern JavaScript'te (ES6) gelen, 'function' kelimesi yerine '=>' (ok) işareti kullanılarak yazılan daha kısa fonksiyon yazım şeklidir.",
+                code: `// Klasik Fonksiyon
+function topla(a, b) {
+    return a + b;
+}
+
+// Ok (Arrow) Fonksiyonu
+const carp = (a, b) => {
+    return a * b;
+};
+
+// Eğer tek satırlık bir işlemse süslü parantez ve return yazmaya gerek yoktur!
+const bol = (a, b) => a / b;`,
+                execute: (container) => {
+                    const topla = (a,b) => a+b;
+                    const carp = (a,b) => a*b;
+                    
+                    container.innerHTML = `
+                        <div style="display:flex; gap:10px;">
+                            <div class="badge">15 + 5 = ${topla(15,5)}</div>
+                            <div class="badge" style="background:#059669;">10 x 4 = ${carp(10,4)}</div>
+                        </div>
+                    `;
+                }
+            },
+
+            "domSelect": {
+                title: "Element Seçme ve Değiştirme (DOM)",
+                description: "DOM (Document Object Model), HTML'in JavaScript ile konuşabilmesini sağlar. Sayfadaki bir etiketi seçip, onun rengini, boyutunu veya içindeki yazıyı değiştirebiliriz.",
+                code: `// ID'si 'kutu' olan elementi HTML'den bul
+const kutuElementi = document.getElementById('kutu');
+
+// İçindeki yazıyı değiştir
+kutuElementi.innerHTML = "JS ile Değiştim!";
+
+// Stilini (CSS) değiştir
+kutuElementi.style.backgroundColor = "blue";
+kutuElementi.style.borderRadius = "50%"; // Yuvarlak yap`,
+                execute: (container) => {
+                    // Önce bir kutu oluşturalım
+                    container.innerHTML = `<div id="ornek-kutu" class="dynamic-box">İlk Halim</div>`;
+                    
+                    // 1 saniye sonra DOM ile müdahale edelim
+                    setTimeout(() => {
+                        const kutu = document.getElementById('ornek-kutu');
+                        if(kutu) {
+                            kutu.innerHTML = "JS ile<br>Değiştim!";
+                            kutu.style.backgroundColor = "#4f46e5";
+                            kutu.style.borderRadius = "50%";
+                            kutu.style.transform = "scale(1.2)";
+                        }
+                    }, 1500);
+                    
+                    // Not eklentisi
+                    const not = document.createElement('p');
+                    not.style.color = "#64748b";
+                    not.style.marginTop = "20px";
+                    not.innerHTML = "<i>(1.5 saniye bekle, kutu JavaScript ile otomatik değişecek)</i>";
+                    container.appendChild(not);
+                }
+            },
+
+            "domCreate": {
+                title: "Yeni Element Üretme (DOM Create)",
+                description: "Sadece var olanları değiştirmekle kalmaz, HTML dosyasında hiç olmayan elementleri JavaScript ile havadan yaratıp sayfaya enjekte edebiliriz.",
+                code: `// 1. Yeni bir 'p' (paragraf) etiketi yarat
+const yeniParagraf = document.createElement('p');
+
+// 2. İçini doldur ve sınıf (class) ekle
+yeniParagraf.innerText = "Ben JavaScript tarafından yaratıldım!";
+yeniParagraf.className = "ozel-stil";
+
+// 3. Sayfadaki mevcut bir alanın içine (sonuna) ekle
+document.body.appendChild(yeniParagraf);`,
+                execute: (container) => {
                     container.innerHTML = ""; // İçeriyi temizle
-                    for (let i = 1; i <= 5; i++) {
-                        container.innerHTML += `<div class="output-item">Kutu ${i}</div>`;
+                    
+                    // For döngüsü ile 3 tane yeni element yaratalım
+                    for(let i=1; i<=3; i++) {
+                        const yeniDiv = document.createElement('div');
+                        yeniDiv.className = 'user-card';
+                        yeniDiv.style.borderLeftColor = "#10b981"; // Yeşil border
+                        yeniDiv.innerHTML = `✨ <b>${i}. Element:</b> Ben tamamen JS ile sıfırdan yaratıldım (createElement).`;
+                        
+                        // Konteynıra ekle
+                        container.appendChild(yeniDiv);
                     }
                 }
             },
-            "while": {
-                title: "while Döngüsü",
-                description: "Sadece bir koşul belirtiriz. 'Bu koşul doğru (true) olduğu sürece çalışmaya devam et' anlamına gelir. Döngünün ne zaman biteceğini önceden bilmediğimiz, bir şarta bağladığımız durumlarda kullanılır. İçeride değişkeni artırmayı unutursak sonsuz döngüye girer!",
-                code: `let sayac = 10;
-while (sayac <= 50) {
-    console.log(sayac);
-    sayac += 10; // 10'ar 10'ar artır
-}`,
-                execute: function(container) {
-                    container.innerHTML = "";
-                    let sayac = 10;
-                    while (sayac <= 50) {
-                        container.innerHTML += `<div class="output-item" style="background:#dcfce3;">Sayac: ${sayac}</div>`;
-                        sayac += 10;
-                    }
-                }
-            },
-            "doWhile": {
-                title: "do...while Döngüsü",
-                description: "While döngüsüne çok benzer ancak çok kritik bir farkı vardır: Koşul yanlış (false) olsa bile kod bloğu 'en az 1 kere' mutlaka çalışır. Çünkü önce işlemi yapar (do), sonra koşulu kontrol eder (while).",
-                code: `let x = 100;
-do {
-    console.log("Koşul sağlamasa da ben 1 kez çalışırım! x: " + x);
-    x++;
-} while (x < 5); // 100, 5'ten küçük değil ama bir kez çalıştı.`,
-                execute: function(container) {
-                    container.innerHTML = "";
-                    let x = 100;
-                    do {
-                        container.innerHTML += `<div class="output-item" style="background:#fee2e2;">Çalıştı! Değer: ${x}</div>`;
-                        x++;
-                    } while (x < 5);
-                }
-            },
-            "forIn": {
-                title: "for...in Döngüsü",
-                description: "Özellikle Nesneler (Objects) içindeki özellikler (propertiler) üzerinde gezinmek için kullanılır. Dizilerde de çalışır ama genellikle objelerin anahtarlarını (keys) okumak için tercih edilir.",
-                code: `const kullanici = { ad: "Çağdaş", yas: 40, sehir: "Ankara" };
 
-for (let anahtar in kullanici) {
-    console.log(anahtar + " : " + kullanici[anahtar]);
-}`,
-                execute: function(container) {
-                    container.innerHTML = "";
-                    const kullanici = { ad: "Çağdaş", yas: 40, sehir: "Ankara" };
-                    for (let anahtar in kullanici) {
-                        container.innerHTML += `<div class="output-item" style="background:#fef08a; display:block;"><b>${anahtar}</b> : ${kullanici[anahtar]}</div>`;
-                    }
-                }
-            },
-            "forOf": {
-                title: "for...of Döngüsü",
-                description: "Diziler (Arrays), Metinler (Strings) gibi tekrarlanabilir veri yapıları içinde gezinmek için harikadır. Dizinin indeks (sıra) numarasıyla uğraşmadan, doğrudan içindeki elemanları sırayla sana verir.",
-                code: `const meyveler = ["Elma", "Armut", "Muz", "Çilek"];
+            "events": {
+                title: "Olay Dinleyiciler (Events)",
+                description: "Kullanıcının sayfadaki hareketlerini yakalarız. Tıklama (click), üzerine gelme (mouseover), klavyede tuşa basma (keydown) gibi 'olaylar' tetiklendiğinde bir fonksiyon çalıştırabiliriz.",
+                code: `// Butonu seç
+const buton = document.getElementById('tiklaBtn');
 
-for (let meyve of meyveler) {
-    console.log("Meyve: " + meyve);
-}`,
-                execute: function(container) {
+// Tıklama olayını (Event) dinle
+buton.addEventListener('click', function() {
+    alert("Butona tıklandı!");
+    // Veya sayac artırma işlemleri vs...
+});`,
+                execute: (container) => {
                     container.innerHTML = "";
-                    const meyveler = ["🍎 Elma", "🍐 Armut", "🍌 Muz", "🍓 Çilek"];
-                    for (let meyve of meyveler) {
-                        container.innerHTML += `<div class="output-item" style="background:#fce7f3; font-size:1.2rem;">${meyve}</div>`;
-                    }
+                    
+                    // Buton ve sayac elementi oluşturalım
+                    const btn = document.createElement('button');
+                    btn.className = 'action-btn';
+                    btn.innerText = 'Bana Tıkla!';
+                    
+                    const sonucMetni = document.createElement('p');
+                    sonucMetni.style.fontSize = "1.2rem";
+                    sonucMetni.style.fontWeight = "bold";
+                    sonucMetni.innerText = "Tıklama Sayısı: 0";
+                    
+                    container.appendChild(btn);
+                    container.appendChild(sonucMetni);
+                    
+                    let sayac = 0;
+                    
+                    // Tıklama event'i ekleyelim
+                    btn.addEventListener('click', () => {
+                        sayac++;
+                        sonucMetni.innerText = `Tıklama Sayısı: ${sayac}`;
+                        
+                        // Her 5 tıklamada konfeti efekti (renk değişimi)
+                        if(sayac % 5 === 0) {
+                            btn.style.backgroundColor = "#e11d48"; // kırmızı
+                            setTimeout(() => btn.style.backgroundColor = "var(--primary)", 300);
+                        }
+                    });
                 }
             }
         };
 
-        // Ekrana verileri basan ana fonksiyon
-        function loadLoop(loopType) {
-            // Menü butonlarındaki aktiflik durumunu güncelle
+        // İçeriği değiştiren fonksiyon
+        function loadLesson(lessonKey) {
+            // Menü aktifliğini güncelle
             document.querySelectorAll('.menu-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
 
-            // Verileri al
-            const data = loopData[loopType];
+            const data = lessonsData[lessonKey];
 
-            // HTML elemanlarını güncelle
+            // Metinleri bas
             document.getElementById('title').innerText = data.title;
             document.getElementById('description').innerText = data.description;
             document.getElementById('code-block').innerText = data.code;
             
-            // Çıktı alanını bul ve döngüyü çalıştırarak sonucu bas
+            // Çıktı alanını hazırlayıp execute fonksiyonunu tetikle
             const outputBlock = document.getElementById('output-block');
+            outputBlock.innerHTML = ""; // Önceki örneği temizle
             data.execute(outputBlock);
         }
 
-        // Sayfa ilk yüklendiğinde varsayılan olarak 'for' döngüsünü aç
-        window.onload = function() {
-            loadLoop('for');
-        };
+        // Sayfa yüklendiğinde ilk konuyu aç
+        window.onload = () => loadLesson('variables');
     </script>
 </body>
 </html>
