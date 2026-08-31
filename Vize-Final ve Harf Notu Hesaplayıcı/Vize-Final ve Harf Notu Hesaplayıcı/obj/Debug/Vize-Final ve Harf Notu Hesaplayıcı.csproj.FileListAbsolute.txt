@@ -1,7 +1,0 @@
-C:\Users\anti_\Desktop\20260829 - Ödevler\Vize-Final ve Harf Notu Hesaplayıcı\Vize-Final ve Harf Notu Hesaplayıcı\bin\Debug\Vize-Final ve Harf Notu Hesaplayıcı.exe.config
-C:\Users\anti_\Desktop\20260829 - Ödevler\Vize-Final ve Harf Notu Hesaplayıcı\Vize-Final ve Harf Notu Hesaplayıcı\bin\Debug\Vize-Final ve Harf Notu Hesaplayıcı.exe
-C:\Users\anti_\Desktop\20260829 - Ödevler\Vize-Final ve Harf Notu Hesaplayıcı\Vize-Final ve Harf Notu Hesaplayıcı\bin\Debug\Vize-Final ve Harf Notu Hesaplayıcı.pdb
-C:\Users\anti_\Desktop\20260829 - Ödevler\Vize-Final ve Harf Notu Hesaplayıcı\Vize-Final ve Harf Notu Hesaplayıcı\obj\Debug\Vize-Final ve Harf Notu Hesaplayıcı.csproj.AssemblyReference.cache
-C:\Users\anti_\Desktop\20260829 - Ödevler\Vize-Final ve Harf Notu Hesaplayıcı\Vize-Final ve Harf Notu Hesaplayıcı\obj\Debug\Vize-Final ve Harf Notu Hesaplayıcı.csproj.CoreCompileInputs.cache
-C:\Users\anti_\Desktop\20260829 - Ödevler\Vize-Final ve Harf Notu Hesaplayıcı\Vize-Final ve Harf Notu Hesaplayıcı\obj\Debug\Vize-Final ve Harf Notu Hesaplayıcı.exe
-C:\Users\anti_\Desktop\20260829 - Ödevler\Vize-Final ve Harf Notu Hesaplayıcı\Vize-Final ve Harf Notu Hesaplayıcı\obj\Debug\Vize-Final ve Harf Notu Hesaplayıcı.pdb
