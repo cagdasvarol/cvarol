@@ -1,0 +1,7 @@
+C:\Users\anti_\Desktop\20260829 - Ödevler\Dört İşlem Mini Hesap Makinesi\Dört İşlem Mini Hesap Makinesi\bin\Debug\Dört İşlem Mini Hesap Makinesi.exe.config
+C:\Users\anti_\Desktop\20260829 - Ödevler\Dört İşlem Mini Hesap Makinesi\Dört İşlem Mini Hesap Makinesi\bin\Debug\Dört İşlem Mini Hesap Makinesi.exe
+C:\Users\anti_\Desktop\20260829 - Ödevler\Dört İşlem Mini Hesap Makinesi\Dört İşlem Mini Hesap Makinesi\bin\Debug\Dört İşlem Mini Hesap Makinesi.pdb
+C:\Users\anti_\Desktop\20260829 - Ödevler\Dört İşlem Mini Hesap Makinesi\Dört İşlem Mini Hesap Makinesi\obj\Debug\Dört İşlem Mini Hesap Makinesi.csproj.AssemblyReference.cache
+C:\Users\anti_\Desktop\20260829 - Ödevler\Dört İşlem Mini Hesap Makinesi\Dört İşlem Mini Hesap Makinesi\obj\Debug\Dört İşlem Mini Hesap Makinesi.csproj.CoreCompileInputs.cache
+C:\Users\anti_\Desktop\20260829 - Ödevler\Dört İşlem Mini Hesap Makinesi\Dört İşlem Mini Hesap Makinesi\obj\Debug\Dört İşlem Mini Hesap Makinesi.exe
+C:\Users\anti_\Desktop\20260829 - Ödevler\Dört İşlem Mini Hesap Makinesi\Dört İşlem Mini Hesap Makinesi\obj\Debug\Dört İşlem Mini Hesap Makinesi.pdb
